@@ -8,6 +8,44 @@
 // Example:
 //   fib(4) === 3
 
-function fib(n) {}
+function fibLento(n=0) {
+
+  if (n <= 0) {
+    return 0
+  }
+
+  const fiboMachine = {
+    a: 0,
+    b: 1,
+    value: 1,
+
+    next: function () {
+      this.value = this.a + this.b;
+      this.a = this.b;
+      this.b = this.value;
+    }
+  }
+
+  for (let index = 1; index < n; index++) {
+    fiboMachine.next();
+  }
+
+  return fiboMachine.value;
+}
+
+
+function fib(n = 0, cache = {}) {
+
+  if (cache[n]) {
+    return cache[n]
+  }
+
+  if (n=== 1 || n === 0) {
+    cache[n] = n;
+    return n;
+  }
+
+  return (cache[n-1] = fib(n-1, cache)) + (cache[n-2] = fib(n-2, cache))
+}
 
 module.exports = fib;
