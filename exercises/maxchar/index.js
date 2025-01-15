@@ -18,6 +18,11 @@ function maxChar(str) {
     }
   }
 
+  // const chars ={}
+  // str.split("").forEach((char)=>{
+  //     if(chars[char]) {chars[char]++} else {chars[char] = 1}
+  // })  
+
   let repetitionNumber = 0;
   let mostCommonChar = "";
 

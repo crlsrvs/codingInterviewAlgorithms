@@ -24,6 +24,8 @@
 
 // esta respuesta fue dada por stephen grider
 function palindrome(str) {
+  // return str.split("").reverse().join("") === str;
+
   return str.split('').every((char, i) => {
     return char === str[str.length - i - 1];
   });

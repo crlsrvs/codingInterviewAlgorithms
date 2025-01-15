@@ -35,17 +35,41 @@ function fibLento(n=0) {
 
 
 function fib(n = 0, cache = {}) {
+  console.log(n);
 
   if (cache[n]) {
     return cache[n]
   }
 
-  if (n=== 1 || n === 0) {
+  if (n === 1 || n === 0) {
     cache[n] = n;
     return n;
   }
 
   return (cache[n-1] = fib(n-1, cache)) + (cache[n-2] = fib(n-2, cache))
 }
+fib(4);
+
+function fib_optimized(n = 0, cache = {}) {
+
+  console.log(n);
+  
+  if (cache[n]) {
+    return cache[n]
+  }
+
+  if (n === 1 || n === 0) {
+    cache[n] = n;
+    return n;
+  }
+
+  return (
+    cache[n-1] ? cache[n-1] : cache[n-1] = fib(n-1, cache)
+  ) + (
+    cache[n-2] ? cache[n-2] : cache[n-2] = fib(n-2, cache)
+  )
+}
+
+fib_optimized(4);
 
 module.exports = fib;

@@ -11,6 +11,7 @@
 function memoize(fn) {
   const cache = {};
   return function(...args) {
+    debugger
     if (cache[args]) {
       return cache[args];
     }
@@ -23,6 +24,7 @@ function memoize(fn) {
 }
 
 function slowFib(n) {
+  debugger
   if (n < 2) {
     return n;
   }

@@ -8,6 +8,8 @@
 //   anagrams('RAIL! SAFETY!', 'fairy tales') --> True
 //   anagrams('Hi there', 'Bye there') --> False
 
+// This works too
+// "A tree, a life, a bench".toLowerCase().split("").sort().filter(char => char >= "a" && char <= "z").join("")
 function anagrams(stringA="", stringB="") {
   
   // Return true if the character is between "a" and "z" according to the ASCII table order of characters
